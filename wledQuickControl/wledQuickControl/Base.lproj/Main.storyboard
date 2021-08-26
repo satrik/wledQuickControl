@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="spacer" id="VpL-bO-XGZ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="spacer" id="t4L-2v-eCF"/>
+                            </menuItem>
+                            <menuItem title="spacer" id="Pw0-1O-ExV">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="spacer" id="w0w-uS-OFL"/>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="wledQuickControl" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="2Ag-6V-W6Y">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="iwo-M9-wDL" customClass="MainViewController" customModule="wledQuickControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="p7o-0e-OsN">
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="100"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aoI-uk-h9H">
+                                <rect key="frame" x="320" y="0.0" width="320" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vXk-Zg-FVC">
+                                        <rect key="frame" x="272" y="41.5" width="48" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="jUl-dW-6Qd">
+                                            <imageReference key="image" image="sun.max.fill" catalog="system" symbolScale="large"/>
+                                        </imageCell>
+                                    </imageView>
+                                    <slider toolTip="Brightness slider" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cN5-nc-onn">
+                                        <rect key="frame" x="48" y="51" width="225" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="GmA-AH-3Zj"/>
+                                        <connections>
+                                            <action selector="changeBrightnessSlider:" target="iwo-M9-wDL" id="dFp-wu-YUH"/>
+                                        </connections>
+                                    </slider>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FM1-iK-Ywi">
+                                        <rect key="frame" x="126" y="18" width="69" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" alignment="center" title=" 000" id="0Y6-Lc-b7l">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button toolTip="Open WLED in browser" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HEa-dc-Acp">
+                                        <rect key="frame" x="285" y="18.5" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="hJS-JF-XVZ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <imageReference key="image" image="safari" catalog="system" symbolScale="large"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="clickOpenWled:" target="iwo-M9-wDL" id="4fA-DN-KFi"/>
+                                        </connections>
+                                    </button>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFN-gu-esl">
+                                        <rect key="frame" x="0.0" y="41.5" width="48" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="2fB-Hf-i94">
+                                            <imageReference key="image" image="sun.max" catalog="system" symbolScale="large"/>
+                                        </imageCell>
+                                    </imageView>
+                                </subviews>
+                            </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uwR-j6-3e5" userLabel="Custom View Settings">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gaq-fn-o8h">
+                                        <rect key="frame" x="13" y="18" width="124" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="check" title="Launch At Login" bezelStyle="regularSquare" imagePosition="right" inset="2" id="Hln-TB-u0a">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <connections>
+                                                <binding destination="iwo-M9-wDL" name="value" keyPath="launchAtLogin.isEnabled" id="7ix-Yw-zuu"/>
+                                            </connections>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="iwo-M9-wDL" name="value" keyPath="launchAtLogin.isEnabled" id="0R6-jK-B5o"/>
+                                        </connections>
+                                    </button>
+                                    <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Rp-Aj-bdN">
+                                        <rect key="frame" x="121" y="56" width="148" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" alignment="center" placeholderString="192.168.178.123" bezelStyle="round" id="VxP-ak-TUZ">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qvt-up-BqW">
+                                        <rect key="frame" x="11" y="59" width="57" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="WLED IP" id="p2o-zE-8Hj">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xuD-JY-kUa">
+                                        <rect key="frame" x="216" y="10" width="60" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BNy-5V-qPY">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="clickedQuitButton:" target="iwo-M9-wDL" id="lkd-DL-0y4"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z7T-Nf-TZc">
+                                        <rect key="frame" x="146" y="10" width="64" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OrT-OU-6aQ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="clickedSaveButton:" target="iwo-M9-wDL" id="cU1-K4-14g"/>
+                                        </connections>
+                                    </button>
+                                    <button toolTip="Open Github Repo" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P5b-A7-0Tg">
+                                        <rect key="frame" x="283" y="56" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="bevel" title="Button" bezelStyle="rounded" image="github_icon" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="Wqs-LJ-LSQ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="clickOpenGithubRepo:" target="iwo-M9-wDL" id="Hro-hr-A1v"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </customView>
+                            <button toolTip="Show config" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wF4-2e-LkX">
+                                <rect key="frame" x="320" y="8" width="48.5" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="n9d-8U-nYX">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <imageReference key="image" image="gearshape" catalog="system" symbolScale="large"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="clickSettingsBtn:" target="iwo-M9-wDL" id="EKA-IF-9WP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="brightnessSlider" destination="cN5-nc-onn" id="yv3-HW-t4U"/>
+                        <outlet property="brightnessSliderLabel" destination="FM1-iK-Ywi" id="Qn1-Wt-7te"/>
+                        <outlet property="customViewDefault" destination="aoI-uk-h9H" id="Jms-un-2pW"/>
+                        <outlet property="customViewSettings" destination="uwR-j6-3e5" id="lfw-t7-IbG"/>
+                        <outlet property="mainView" destination="p7o-0e-OsN" id="3Tt-Kd-c6u"/>
+                        <outlet property="saveButton" destination="Z7T-Nf-TZc" id="FwC-TX-Yhf"/>
+                        <outlet property="settingsBtn" destination="wF4-2e-LkX" id="I4x-zq-7s7"/>
+                        <outlet property="settingsButton" destination="n9d-8U-nYX" id="RBS-b6-qTl"/>
+                        <outlet property="textfieldWledHost" destination="9Rp-Aj-bdN" id="wab-Mo-ThA"/>
+                    </connections>
+                </viewController>
+                <customObject id="wqN-LU-HNr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="ERW-lh-cKu"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="159"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gearshape" catalog="system" width="20" height="20"/>
+        <image name="github_icon" width="24" height="24"/>
+        <image name="safari" catalog="system" width="19" height="19"/>
+        <image name="sun.max" catalog="system" width="20" height="20"/>
+        <image name="sun.max.fill" catalog="system" width="20" height="20"/>
+    </resources>
+</document>
