@@ -59,20 +59,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       
       if let button = self.statusItem.button {
         
-        if(mainView.isKeyPresentInUserDefaults(key: "wledIp")){
+        if(mainView.defaults.value(forKey: "wledDeviceCurrent") as! String != "") {
           
-          if (button.image == menuIconOn){
             
-            button.image = menuIconOff
-            mainView.postValues(sendOnOff: true, on: false, sendBri: false, bri: 0)
+            if (button.image == menuIconOn) {
+              
+              button.image = menuIconOff
+              mainView.postValues(sendOnOff: true, on: false, sendBri: false, bri: 0)
+              
+            } else {
+              
+              button.image = menuIconOn
+              mainView.postValues(sendOnOff: true, on: true, sendBri: false, bri: 0)
+              
+            }
             
-          } else {
-            
-            button.image = menuIconOn
-            mainView.postValues(sendOnOff: true, on: true, sendBri: false, bri: 0)
-            
-          }
           
+
         } else {
           
           button.layer?.backgroundColor = CGColor(red: 0.75, green: 0, blue: 0 , alpha: 0.75)
