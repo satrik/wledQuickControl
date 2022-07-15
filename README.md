@@ -8,7 +8,9 @@
     - click on the little gear symbol will show the settings
 
 ### install
-- download and unpack the wledQuickControl.zip
+- download or clone the repo
+- open a terminal and cd into the downloaded folder
+- run `sh disableQuarantine.sh`
 - move the _wledQuickControl.app_ file to the Applications directory
 - start the App the first time via right click > open and "Trust me" :wink:
 
