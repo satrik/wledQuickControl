@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4219F2B126D1482A0074616A /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 4219F2B026D1482A0074616A /* LaunchAtLogin */; };
+		422C41412881574500F873F9 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 422C41402881574500F873F9 /* LaunchAtLogin */; };
 		AD988B841F1D23CB002C6B61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD988B831F1D23CB002C6B61 /* AppDelegate.swift */; };
 		AD988B881F1D23CB002C6B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD988B871F1D23CB002C6B61 /* Assets.xcassets */; };
 		AD988B8B1F1D23CB002C6B61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD988B891F1D23CB002C6B61 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				422C41412881574500F873F9 /* LaunchAtLogin in Frameworks */,
 				4219F2B126D1482A0074616A /* LaunchAtLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +89,7 @@
 			name = wledQuickControl;
 			packageProductDependencies = (
 				4219F2B026D1482A0074616A /* LaunchAtLogin */,
+				422C41402881574500F873F9 /* LaunchAtLogin */,
 			);
 			productName = Quotes;
 			productReference = AD988B801F1D23CB002C6B61 /* wledQuickControl.app */;
@@ -124,6 +127,7 @@
 			mainGroup = AD988B771F1D23CB002C6B61;
 			packageReferences = (
 				4219F2AF26D1482A0074616A /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				422C413F2881574500F873F9 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 			);
 			productRefGroup = AD988B811F1D23CB002C6B61 /* Products */;
 			projectDirPath = "";
@@ -316,6 +320,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.satrik.wledQuickControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -334,6 +339,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.satrik.wledQuickControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -372,12 +378,25 @@
 				minimumVersion = 4.1.0;
 			};
 		};
+		422C413F2881574500F873F9 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		4219F2B026D1482A0074616A /* LaunchAtLogin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4219F2AF26D1482A0074616A /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
+		422C41402881574500F873F9 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 422C413F2881574500F873F9 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
 			productName = LaunchAtLogin;
 		};
 /* End XCSwiftPackageProductDependency section */

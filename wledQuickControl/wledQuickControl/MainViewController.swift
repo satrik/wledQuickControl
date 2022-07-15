@@ -41,6 +41,13 @@ class MainViewController: NSViewController {
   }
   
   
+  override func viewDidDisappear() {
+    
+    updateStates()
+    
+  }
+  
+  
   func initViews() {
     
     if(isKeyPresentInUserDefaults(key: "wledIp")){
@@ -120,7 +127,7 @@ class MainViewController: NSViewController {
       request.addValue("application/json", forHTTPHeaderField: "Accept")
       
       URLSession.shared.dataTask(with: request) { _,_,_ in  }.resume()
-      
+            
     }
     
   }
@@ -224,6 +231,7 @@ class MainViewController: NSViewController {
       break
       
     }
+    
     
   }
   
